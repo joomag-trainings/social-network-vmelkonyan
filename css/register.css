@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.signIn {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: #2e4045;
+    display: table;
+    top: 0;
+    background-size: cover;
+}
+
+.signIn .inner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
+}
+
+.reg-box {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 8%;
+}
+
+.reg-box h1 {
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 400%;
+    font-weight: 200;
+    color: #83adb5;
+    line-height: 70%;
+}
+
+.reg-box #btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 135%;
+    font-weight: 400;
+    color: #bfb5b2;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: solid #bfb5b2;
+    padding: 10px 20px;
+    border-radius: 9px;
+    transition: all 0.5s;
+}
+
+#btn:hover {
+    color: #5e3c58;
+    border: solid #5e3c58 2px;
+}
+
+.reg-box input {
+    width: 270px;
+    height: 50px;
+    margin: 15px;
+    border-radius: 9px;
+}
+
+.reg-box input,
+input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 3;
+}
+
+/*--- Media Queries --*/
+@media screen and (max-width: 900px) {
+    .reg-box {
+        padding-bottom: 30%;
+    }
+
+    .reg-box h1 {
+        font-size: 450%;
+    }
+
+    .btn {
+        font-size: 130%;
+        padding: 9px 17px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .reg-box {
+        padding-bottom: 40%;
+    }
+
+    .reg-box h1 {
+        font-size: 300%;
+    }
+
+    .btn {
+        font-size: 110%;
+        padding: 7px 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reg-box {
+        padding-bottom: 50%;
+    }
+
+    .reg-box h1 {
+        font-size: 250%;
+    }
+
+    .btn {
+        font-size: 110%;
+        padding: 6px 14px;
+    }
+}
