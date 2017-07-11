@@ -2,43 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/landingPage.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link href="css/animate.css" rel="stylesheet"/>
+    <link href="css/waypoints.css" rel="stylesheet"/>
+    <script src="js/jquery.waypoints.min.js" type="text/javascript"></script>
+    <script src="js/waypoints.js" type="text/javascript"></script>
+    <title>ChapterOne</title>
 </head>
 <body>
-
-<div id="main">
-    <div id="left"></div>
-    <div id="right">
-        <div class="box">
-            <form>
-                <h1>Sign Up</h1>
-
-
-                <input type="radio" value="None" id="radioOne" name="account" checked/>
-                <label for="radioOne" class="radio">Personal</label>
-                <input type="radio" value="None" id="radioTwo" name="account"/>
-                <label for="radioTwo" class="radio">Company</label>
-
-                <hr>
-                <label id="icon" for="email"><i class="icon-envelope"></i></label>
-                <input type="text" name="email" id="email" placeholder="Email" required/>
-                <label id="icon" for="name"><i class="icon-user"></i></label>
-                <input type="text" name="name" id="name" placeholder="Name" required/>
-                <label id="icon" for="password"><i class="icon-shield"></i></label>
-                <input type="password" name="name" id="password" placeholder="Password" required/>
-                <label id="icon" for="password-conf"><i class="icon-shield"></i></label>
-                <input type="password" name="name" id="password-conf" placeholder="Repeat Password" required/>
-
-                <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
-                <a href="#" class="button">Register</a>
-            </form>
+<section class="signIn">
+    <div class="inner">
+        <div class="reg-box">
+            <section class="os-animation" data-os-animation="bounceInUp" data-os-animation-delay="0s">
+                <h1>ChapterOne</h1>
+            </section>
+            <section class="os-animation" data-os-animation="bounceInUp" data-os-animation-delay=".1s">
+                <a class="btn" href="pages/register.php">Get Started</a>
+            </section>
         </div>
     </div>
-</div>
+</section>
 </body>
 </html>
