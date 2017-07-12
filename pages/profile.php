@@ -8,19 +8,9 @@
 </head>
 <body>
 <div id="main">
-    <header>
+    <?php include_once('header.php');
+    include_once('sideBar.php'); ?>
 
-        <a href="#"> <img src="../images/logo.png"> </a>
-
-    </header>
-    <div id="side-bar">
-        <a href="#" class="side-bar">My Profile</a>
-        <a href="photos.html" class="side-bar">Photos</a>
-        <a href="#" class="side-bar">Properties</a>
-        <a href="#" class="side-bar">About</a>
-        <a href="login.html" class="side-bar">Log Out</a>
-
-    </div>
     <div id="profile">
         <div id="profile-pic"><img src="../images/profilepic.png" id="profilepic"></div>
         <div id="info">
@@ -32,7 +22,7 @@
                 <li>Country: count</li>
                 <li>Phone Number: 374665989</li>
                 <li>
-                    <a href="edit.html">
+                    <a href="edit.php">
                         <button>Edit personal information</button>
                     </a>
                 </li>

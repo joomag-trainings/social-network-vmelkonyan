@@ -7,20 +7,8 @@
 
 </head>
 <body>
-<header>
-
-    <a href="#"> <img src="../images/logo.png"> </a>
-
-</header>
-<div id="side-bar">
-    <a href="profile.html" class="side-bar">My Profile</a>
-    <a href="#" class="side-bar">Photos</a>
-    <a href="#" class="side-bar">Properties</a>
-    <a href="#" class="side-bar">About</a>
-    <a href="login.html" class="side-bar">Log Out</a>
-
-</div>
-
+<?php include_once('header.php');
+include_once('sideBar.php'); ?>
 
 <div id="cont">
     <div id="photos">
@@ -31,7 +19,7 @@
         <div class="image-container"><a href="#"><img src="../images/img1.jpg" alt="no image"></a></div>
         <div class="image-container"><a href="#"> <img src="../images/img2.jpg" alt="no image"></a></div>
         <a href="#">
-            <button>Edit</button>
+            <button>Add</button>
         </a>
 
     </div>

@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = validate($_POST['email']);
     $password = validate($_POST['pss']);
     var_dump($password);
-    header('location: profile.html');
+    header('location: timeline.php');
     die();
 }
 
