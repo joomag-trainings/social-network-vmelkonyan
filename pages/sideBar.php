@@ -11,7 +11,7 @@ $sideBar = '<div id="side-bar">
         <a href="photos.php" class="side-bar">Photos</a>
         <a href="#" class="side-bar">Properties</a>
         <a href="#" class="side-bar">About</a>
-        <a href="login.html" class="side-bar">Log Out</a>
+        <a href="logout.php" class="side-bar">Log Out</a>
 
     </div>';
 

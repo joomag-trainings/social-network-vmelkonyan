@@ -1,3 +1,7 @@
+<?php
+require_once('checkSession.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

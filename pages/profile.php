@@ -1,3 +1,7 @@
+<?php
+require_once('checkSession.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,7 @@
         <div id="profile-pic"><img src="../images/profilepic.png" id="profilepic"></div>
         <div id="info">
             <ul>
-                <li>Name: name</li>
+                <li>Name: <?= $_SESSION['user'] ?></li>
                 <li>Surname: sname</li>
                 <li>Email: mail</li>
                 <li>Gender: gend</li>

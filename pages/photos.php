@@ -1,8 +1,11 @@
 <?php
-$target_dir = "/var/www/html/PhpstormProjects/social-network/uploads";
-$upload_file = $target_dir . basename($_FILES['img']['name']);
-$message = "No message";
+require_once('checkSession.php');
+
+$message = " ";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $target_dir = "/var/www/html/PhpstormProjects/social-network/uploads/";
+    $upload_file = $target_dir . basename($_FILES['img']['name']);
+
     if (move_uploaded_file($_FILES['img']['tmp_name'], $upload_file)) {
         $message = "OK";
     } else {
