@@ -7,8 +7,6 @@
  * Time: 3:50 AM
  */
 
-namespace php\inc;
-
 interface DataValidator
 {
     public function validate($data);

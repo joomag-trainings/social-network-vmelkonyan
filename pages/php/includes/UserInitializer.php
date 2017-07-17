@@ -1,14 +1,11 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: moof
  * Date: 7/17/17
  * Time: 3:59 AM
  */
-
-namespace php\inc;
-
-
 class UserInitializer
 {
     private $newUser;

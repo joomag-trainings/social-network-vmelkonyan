@@ -6,9 +6,6 @@
  * Time: 4:05 AM
  */
 
-namespace php\inc;
-
-
 class Database
 {
     private $dbPath = "/var/www/html/PhpstormProjects/social-network/pages/users.txt";
@@ -23,6 +20,10 @@ class Database
 
     public function checkIfUserExists($pseudonym, $password)
     {
+        $regValidator = new RegistrationValidator();
+        $pseudonym = $regValidator->validatePseudonym($pseudonym);
+        $password = $regValidator->validatePassword($password);
+
         $handle = fopen($this->dbPath, 'r');
 
         if ($handle) {

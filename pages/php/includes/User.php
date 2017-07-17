@@ -6,7 +6,6 @@
  * Time: 3:14 AM
  */
 
-namespace php\inc;
 
 class User
 {
