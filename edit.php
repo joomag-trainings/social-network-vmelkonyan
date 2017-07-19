@@ -7,7 +7,7 @@ require_once('checkSession.php');
 <head>
     <meta charset="UTF-8">
     <title>Edit</title>
-    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
 <?php include_once('header.php'); ?>
