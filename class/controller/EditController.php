@@ -1,20 +1,31 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: moof
+ * Date: 7/21/17
+ * Time: 5:29 AM
+ */
 
 namespace controller;
 
 use model\UserModel;
 
-class RegisterController
+class EditController extends AbstractController
 {
-    public function actionValidate()
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function actionEdit()
     {
         require('class/RegistrationValidator.php');
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $validator = new \RegistrationValidator();
+            // initialized non-hashed password to verify with the current password
             $user = new UserModel($validator->validateFirstName(), $validator->validateLastName(),
-                $validator->validatePseudonym(), $validator->validateEmail(), $validator->validatePassword());
-            $result = UserModel::addUser($user);
-
+                $validator->validatePseudonym(), $validator->validateEmail(), $_POST['password']);
+            $result = UserModel::updateUser($user, $validator->validateNewPassword());
             if ($result) {
                 $_SESSION['user'] = [
                     'firstName' => $user->getFirstName(),
@@ -27,17 +38,12 @@ class RegisterController
 
             } else {
 
-                require('view/intro/register.php');
+                require('view/user/edit.php');
                 die;
             }
         } else {
-            require('view/intro/register.php');
+            require('view/intro/edit.php');
             die;
         }
-    }
-
-    public function actionTimeline()
-    {
-        require_once('./view/user/timeline.php');
     }
 }

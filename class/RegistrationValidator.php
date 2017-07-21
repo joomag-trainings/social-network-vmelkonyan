@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: moof
+ * UserModel: moof
  * Date: 7/17/17
  * Time: 3:06 AM
  */
@@ -23,31 +23,39 @@ class RegistrationValidator implements DataValidator
         return $data;
     }
 
-    public function validateFirstName($firstName)
+    public function validateFirstName()
     {
-        return empty($_POST['firstName']) ? die(header('location: ../../register.php')) : $firstName = $this->validate($_POST['firstName']);
+        return empty($_POST['firstName']) ? die(header('location: http://localhost/social-network/index.php?page=Authentication&action=Redirect')) : $firstName = $this->validate($_POST['firstName']);
     }
 
-    public function validateLastName($lastName)
+    public function validateLastName()
     {
-        return empty($_POST['lastName']) ? die(header('location: ../../register.php')) : $lastName = $this->validate($_POST['lastName']);
+        return empty($_POST['lastName']) ? die(header('location: http://localhost/social-network/index.php?page=Authentication&action=Redirect')) : $lastName = $this->validate($_POST['lastName']);
     }
 
-    public function validatePseudonym($pseudonym)
+    public function validatePseudonym()
     {
-        return empty($_POST['pseudonym']) ? die(header('location: ../../register.php')) : $pseudonym = $this->validate($_POST['pseudonym']);
+        return empty($_POST['pseudonym']) ? die(header('location: http://localhost/social-network/index.php?page=Authentication&action=Redirect')) : $pseudonym = $this->validate($_POST['pseudonym']);
     }
 
-    public function validateEmail($email)
+    public function validateEmail()
     {
-        return empty($_POST['email']) ? die(header('location: ../../register.php')) : $email = filter_var($this->validate($_POST['email']),
+        return empty($_POST['email']) ? die(header('location: http://localhost/social-network/index.php?page=Authentication&action=Redirect')) : $email = filter_var($this->validate($_POST['email']),
             FILTER_VALIDATE_EMAIL);
     }
 
-    public function validatePassword($password)
+    public function validatePassword()
     {
-        return empty($_POST['password']) ? die(header('location: ../../register.php')) : $password = password_hash($this->validate($_POST['password']),
+        return empty($_POST['password']) ? die(header('location: http://localhost/social-network/index.php?page=Authentication&action=Redirect')) : $password = password_hash($this->validate($_POST['password']),
             PASSWORD_BCRYPT);
+    }
+
+    public function validateNewPassword()
+    {
+        if ($_POST['new-password'] === $_POST['new-password-repeat']) {
+            return empty($_POST['new-password']) || empty($_POST['new-password-repeat']) ? die(header('location: http://localhost/social-network/index.php?page=Authentication&action=Redirect')) : $password = password_hash($this->validate($_POST['new-password']),
+                PASSWORD_BCRYPT);
+        }
     }
 
 }

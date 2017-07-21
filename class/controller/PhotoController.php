@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: moof
+ * UserModel: moof
  * Date: 7/19/17
  * Time: 2:52 PM
  */

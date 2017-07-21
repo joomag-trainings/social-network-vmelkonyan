@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: moof
+ * UserModel: moof
  * Date: 7/19/17
  * Time: 4:37 AM
  */
@@ -9,23 +9,41 @@
 namespace controller;
 
 
+use model\UserModel;
+
 class AuthenticationController
 {
     public function actionRedirect()
     {
-        require('/var/www/html/social-network/view/intro/login.php');
+        require('view/intro/login.php');
     }
 
     public function actionLogout()
     {
-        unset($_SESSION['user']);
-        unset($_SESSION['message']);
+        unset($_SESSION['username']);
         session_destroy();
         require('./view/intro/login.php');
     }
 
     public function actionLogin()
     {
-
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $validator = new \RegistrationValidator();
+            $user = new UserModel(null, null, $validator->validatePseudonym(), null, $_POST['password']);
+            $user = UserModel::checkUser($user);
+            if (!$user) {
+                require('./view/intro/login.php');
+            } else {
+                $_SESSION['username'] = [
+                    'firstName' => $user->getFirstName(),
+                    'lastName' => $user->getLastName(),
+                    'pseudonym' => $user->getPseudonym(),
+                    'email' => $user->getEmail()
+                ];
+                require('./view/user/profile.php');
+            }
+        } else {
+            require('./view/intro/login.php');
+        }
     }
 }

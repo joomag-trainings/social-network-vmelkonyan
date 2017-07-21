@@ -1,40 +1,23 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moof
- * Date: 7/17/17
- * Time: 4:05 AM
- */
 
 class Database
 {
-    private $dbPath = "/var/www/html/PhpstormProjects/social-network/pages/users.txt";
+    private static $connection;
 
-    public function addUserToDb(User $newUser)
+    private function __construct()
     {
-        $entry = $newUser->getPseudonym() . " " . $newUser->getPassword() . " \n";
-        $handle = fopen($this->dbPath, 'a');
-        fwrite($handle, $entry);
-        fclose($handle);
     }
 
-    public function checkIfUserExists($pseudonym, $password)
+    public static function getInstance()
     {
-        $regValidator = new RegistrationValidator();
-        $pseudonym = $regValidator->validatePseudonym($pseudonym);
-        $password = $regValidator->validatePassword($password);
+        global $dsn, $dbName, $dbUser, $dbPass;
 
-        $handle = fopen($this->dbPath, 'r');
+        require('config/db.config.php');
 
-        if ($handle) {
-            while (($line = fgets($handle)) !== false) {
-                $temp = explode(' ', $line);
-                if ($temp[0] === $pseudonym && password_verify($password, $temp[1])) {
-                    return true;
-                }
-            }
-            fclose($handle);
+        if (!isset(self::$connection)) {
+            $dsn = 'mysql:host=localhost;dbname=ChapterOne';
+            self::$connection = new PDO($dsn, $dbUser, $dbPass);
         }
-        return false;
+        return self::$connection;
     }
 }

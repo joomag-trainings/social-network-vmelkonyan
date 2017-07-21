@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: moof
- * Date: 7/17/17
- * Time: 5:07 PM
- */
 class PhotoUploadHandler
 {
     public function addPhoto($_FILES)
