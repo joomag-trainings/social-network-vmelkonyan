@@ -1,7 +1,3 @@
-<?php
-require_once('checkSession.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,19 +13,17 @@ require_once('checkSession.php');
         <a href="http://localhost/social-network/index.php?page=Browse&action=Photos" class="side-bar">Photos</a>
         <a href="#" class="side-bar">Properties</a>
         <a href="#" class="side-bar">About</a>
-        <a href="http://localhost/social-network/index.php?page=Authentication&action=LogOut" class="side-bar">Log
-            Out</a>
+        <a href="http://localhost/social-network/index.php?page=Authentication&action=LogOut" class="side-bar">
+            Log Out</a>
     </div>
     <div id="profile">
         <div id="profile-pic"><img src="images/profilepic.png" id="profilepic"></div>
         <div id="info">
             <ul>
-                <li>Name: <?= $_SESSION['user'] ?></li>
-                <li>Surname: sname</li>
-                <li>Email: mail</li>
-                <li>Gender: gend</li>
-                <li>Country: count</li>
-                <li>Phone Number: 374665989</li>
+                <li>Name: <?= $_SESSION['username']['firstName'] ?></li>
+                <li>Surname: <?= $_SESSION['username']['lastName'] ?></li>
+                <li>Email: <?= $_SESSION['username']['email'] ?></li>
+                <li>Pseudonym: <?= $_SESSION['username']['pseudonym'] ?></li>
                 <li>
                     <a href="http://localhost/social-network/index.php?page=Browse&action=Edit">
                         <button>Edit personal information</button>

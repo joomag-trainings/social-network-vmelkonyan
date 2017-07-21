@@ -11,7 +11,7 @@
     <link href="css/waypoints.css" rel="stylesheet"/>
     <script src="js/jquery.waypoints.min.js" type="text/javascript"></script>
     <script src="js/waypoints.js" type="text/javascript"></script>
-    <title>Register</title>
+    <title>Log In</title>
 </head>
 <body>
 <div class="signIn">
