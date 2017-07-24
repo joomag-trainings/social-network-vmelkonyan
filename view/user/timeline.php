@@ -12,10 +12,12 @@
     <div id="side-bar">
         <a href="http://localhost/social-network/index.php?page=Browse&action=Profile" class="side-bar">My Profile</a>
         <a href="http://localhost/social-network/index.php?page=Browse&action=Photos" class="side-bar">Photos</a>
-        <a href="#" class="side-bar">Properties</a>
+        <a href="http://localhost/social-network/index.php?page=Browse&action=Timeline" class="side-bar">Timeline</a>
         <a href="#" class="side-bar">About</a>
         <a href="http://localhost/social-network/index.php?page=Authentication&action=LogOut" class="side-bar">Log
             Out</a>
+        <form class="side-bar" method="post" action="http://localhost/social-network/index.php?page=Search&action=Find">
+            <input id="search" name="query" type="search" placeholder="Search..."></form>
     </div>
 
     <div id="timeLine">
@@ -35,32 +37,6 @@
             </div>
         </article>
     </div>
-
-    <div id="right">
-
-        <div class="card">
-            <img src="images/profile.jpeg" alt="John">
-            <div class="container">
-                <h1>Name Surname</h1>
-                <p class="title">Writer, Editor Example</p>
-                <p>Harvard University</p>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <p>
-                    <button>Edit</button>
-                </p>
-            </div>
-
-        </div>
-        <form id="search-cont">
-
-            <input type="search" id="search" placeholder="Search">
-
-        </form>
-    </div>
-
 </div>
 </body>
 </html>
