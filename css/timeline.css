@@ -14,52 +14,38 @@ header {
     overflow: hidden;
 
 }
+form.side-bar {
+    float: left;
+    display: block;
+    padding: 8px 16px;
+}
 
-input {
+#search {
+    float: left;
+    display: block;
+    border-radius: 8px;
+}
+
+#search:focus {
     outline: none;
 }
 
-input[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
-    font-family: Courier;
-    font-size: 100%;
-}
-
-input[type=search] {
-    background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-    border: solid 1px #ccc;
-    padding: 9px 10px 9px 32px;
-
-    width: 56px;
-    float: right;
-
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
-    border-radius: 10em;
-
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
-}
-
-input[type=search]:focus {
-    width: 220px;
-    background-color: #fff;
-    border-color: #66CC75;
-
-    -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-    -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-    box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-}
 
 #side-bar {
-    width: 300px;
-    height: 800px;
-    float: left;
-    padding-top: 25px;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%;
+}
 
-    background-color: #f7f9fc;
+a.side-bar {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 .card {
@@ -153,11 +139,4 @@ h3:hover a {
 
 #right {
     float: right;
-}
-
-a.side-bar {
-    font-size: 38px;
-    margin: 25px;
-    margin-top:35px;
-    float: left;
 }
