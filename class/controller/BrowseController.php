@@ -28,4 +28,9 @@ class BrowseController extends AbstractController
     {
         require('./view/user/edit.php');
     }
+
+    public function actionTimeline()
+    {
+        require('./view/user/timeline.php');
+    }
 }

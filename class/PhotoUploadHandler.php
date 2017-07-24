@@ -2,6 +2,7 @@
 
 class PhotoUploadHandler
 {
+    // use sharding
     public function addPhoto($_FILES)
     {
         $message = "";

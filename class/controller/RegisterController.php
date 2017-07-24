@@ -11,12 +11,14 @@ class RegisterController
         require('class/RegistrationValidator.php');
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $validator = new \RegistrationValidator();
-            $user = new UserModel($validator->validateFirstName(), $validator->validateLastName(),
+            $user = new UserModel(null, $validator->validateFirstName(), $validator->validateLastName(),
                 $validator->validatePseudonym(), $validator->validateEmail(), $validator->validatePassword());
             $result = UserModel::addUser($user);
 
             if ($result) {
+                //use userId (index)
                 $_SESSION['user'] = [
+                    'id' => $user->getId(),
                     'firstName' => $user->getFirstName(),
                     'lastName' => $user->getLastName(),
                     'pseudonym' => $user->getPseudonym(),

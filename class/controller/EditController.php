@@ -23,11 +23,12 @@ class EditController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $validator = new \RegistrationValidator();
             // initialized non-hashed password to verify with the current password
-            $user = new UserModel($validator->validateFirstName(), $validator->validateLastName(),
+            $user = new UserModel(null, $validator->validateFirstName(), $validator->validateLastName(),
                 $validator->validatePseudonym(), $validator->validateEmail(), $_POST['password']);
             $result = UserModel::updateUser($user, $validator->validateNewPassword());
             if ($result) {
                 $_SESSION['user'] = [
+                    'id' => $user->getId(),
                     'firstName' => $user->getFirstName(),
                     'lastName' => $user->getLastName(),
                     'pseudonym' => $user->getPseudonym(),

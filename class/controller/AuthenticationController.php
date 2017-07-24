@@ -29,12 +29,13 @@ class AuthenticationController
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $validator = new \RegistrationValidator();
-            $user = new UserModel(null, null, $validator->validatePseudonym(), null, $_POST['password']);
+            $user = new UserModel(null, null, null, $validator->validatePseudonym(), null, $_POST['password']);
             $user = UserModel::checkUser($user);
             if (!$user) {
                 require('./view/intro/login.php');
             } else {
-                $_SESSION['username'] = [
+                $_SESSION['user'] = [
+                    'id' => $user->getId(),
                     'firstName' => $user->getFirstName(),
                     'lastName' => $user->getLastName(),
                     'pseudonym' => $user->getPseudonym(),

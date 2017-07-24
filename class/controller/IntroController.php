@@ -24,6 +24,6 @@ class IntroController
 
     public function actionLogin()
     {
-        require('.view/intro/login.php');
+        require('./view/intro/login.php');
     }
 }

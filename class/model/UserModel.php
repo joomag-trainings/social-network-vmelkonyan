@@ -4,6 +4,7 @@ namespace model;
 
 class UserModel
 {
+    private $id;
     private $firstName;
     private $lastName;
     private $pseudonym;
@@ -12,19 +13,31 @@ class UserModel
 
     /**
      * UserModel constructor.
+     * @param $id
      * @param $firstName
      * @param $lastName
      * @param $pseudonym
      * @param $email
      * @param $password
      */
-    public function __construct($firstName, $lastName, $pseudonym, $email, $password)
+    public function __construct($id, $firstName, $lastName, $pseudonym, $email, $password)
     {
+        $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->pseudonym = $pseudonym;
         $this->email = $email;
         $this->password = $password;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**
@@ -138,6 +151,7 @@ class UserModel
     {
         require('class/Database.php');
         $connection = \Database::getInstance();
+        $id = $user->getId();
         $firstName = $user->getFirstName();
         $lastName = $user->getLastName();
         $pseudonym = $user->getPseudonym();
@@ -180,6 +194,7 @@ class UserModel
         $statement->execute();
         $rslt = $statement->fetchAll(\PDO::FETCH_ASSOC);
         if (password_verify($user->getPassword(), $rslt[0]['password'])) {
+            $user->setId($rslt[0]['ID']);
             $user->setFirstName($rslt[0]['first_name']);
             $user->setLastName($rslt[0]['last_name']);
             $user->setPseudonym($rslt[0]['pseudonym']);
